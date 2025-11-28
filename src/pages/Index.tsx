@@ -10,7 +10,56 @@ interface ModuleCardProps {
   glowColor: string;
 }
 
+// const ModuleCard = ({ icon, title, tagline, borderColor, glowColor }: ModuleCardProps) => {
+//   return (
+//     <div
+//       className="group relative bg-card rounded-lg p-6 transition-all duration-300 hover:scale-105 cursor-pointer"
+//       style={{
+//         border: `2px solid ${borderColor}`,
+//         boxShadow: `0 0 10px ${glowColor}20`,
+//       }}
+//       onMouseEnter={(e) => {
+//         e.currentTarget.style.boxShadow = `0 0 20px ${glowColor}60`;
+//       }}
+//       onMouseLeave={(e) => {
+//         e.currentTarget.style.boxShadow = `0 0 10px ${glowColor}20`;
+//       }}
+//     >
+//       <div className="flex flex-col items-center text-center space-y-4">
+//         <div className="p-4 rounded-full bg-card-foreground/5" style={{ color: borderColor }}>
+//           {icon}
+//         </div>
+//         <h3 className="text-xl font-bold text-foreground">{title}</h3>
+//         <p className="text-sm text-muted-foreground">{tagline}</p>
+//       </div>
+//     </div>
+//   );
+// };
 const ModuleCard = ({ icon, title, tagline, borderColor, glowColor }: ModuleCardProps) => {
+  const handleClick = () => {
+    if (title === "3D Biology Chromalume") {
+      window.location.href = "https://chromalumebio-hqo0rnlsw-srinidhis-projects-78c96e55.vercel.app";
+    }
+    else if (title === "Digital Electronics") {
+    window.location.href = "https://digital-circuit-lab-0cc28572.vercel.app";
+  } else if (title === "Ray Optics") {
+    window.location.href = "https://ray-optics-explorer.vercel.app";
+  } else if (title === "Kinematics") {
+    window.location.href = "https://motion-masters.vercel.app";
+  } else if (title === "Thermodynamics") {
+    window.location.href = "https://thermo-explorer.vercel.app";
+  }
+  else if (title === "AI Chat Assistant") {
+    window.location.href = "https://groq-chat-buddy.vercel.app";
+  } 
+  else if (title === "3D ChemVision") {
+    window.location.href = "https://chem-verse-7egs.vercel.app/";
+  } else if (title === "Periodic Viewer") {
+    window.location.href = "https://periodic-explorer.vercel.app/";
+  }
+  
+  };
+
   return (
     <div
       className="group relative bg-card rounded-lg p-6 transition-all duration-300 hover:scale-105 cursor-pointer"
@@ -24,6 +73,7 @@ const ModuleCard = ({ icon, title, tagline, borderColor, glowColor }: ModuleCard
       onMouseLeave={(e) => {
         e.currentTarget.style.boxShadow = `0 0 10px ${glowColor}20`;
       }}
+      onClick={handleClick}
     >
       <div className="flex flex-col items-center text-center space-y-4">
         <div className="p-4 rounded-full bg-card-foreground/5" style={{ color: borderColor }}>
@@ -35,7 +85,6 @@ const ModuleCard = ({ icon, title, tagline, borderColor, glowColor }: ModuleCard
     </div>
   );
 };
-
 const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
